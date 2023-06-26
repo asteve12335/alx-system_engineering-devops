@@ -1,0 +1,5 @@
+es ssh to connect to a server
+# private key: ~/.ssh/school
+# user: ubuntu
+
+ssh ubuntu@100.26.178.74 -i ~/.ssh/school
