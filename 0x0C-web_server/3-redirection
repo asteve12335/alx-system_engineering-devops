@@ -2,8 +2,8 @@
 # Configure your Nginx server so that /redirect_me is redirecting to another page.
 
 # Update the package list and install Nginx
-apt-get -y update -y
-apt-get -y install nginx -y
+sudo apt-get -y update -y
+sudo apt-get -y install nginx -y
 
 echo "Hello World!" > /var/www/html/index.html
 
