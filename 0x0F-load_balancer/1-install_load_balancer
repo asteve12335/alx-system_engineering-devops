@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Install HAProxy
+sudo apt-get update
+sudo apt-get install haproxy -y
+
+# Configure HAProxy to send traffic to web-01 and web-02 using a roundrobin algorithm
+echo "
+frontend http_front
+    bind *:80
+    mode http
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    mode http
+    server 160306-web-01 54.209.182.89:80 check
+    server 160306-web-02 18.207.234.15:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+# Enable HAProxy management
+sudo sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
+
+# Restart HAProxy
+sudo service haproxy restart
