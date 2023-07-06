@@ -35,12 +35,12 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend http
-        bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/www.stevi.tech/fullchain.pem
+        bind ./*glob*:80
+        bind ./*glob*:443 ssl crt /etc/haproxy/certs/www.stevi.tech/fullchain.pem
         default_backend webservers
 
 frontend www-https
-        bind *:443 ssl crt /etc/haproxy/certs/www.stevi.tech/fullchain.pem
+        bind ./*glob*:443 ssl crt /etc/haproxy/certs/www.stevi.tech/fullchain.pem
         http-request set-header X-Forwarded-Proto https
         default_backend webservers
 
