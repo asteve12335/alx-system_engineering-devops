@@ -43,7 +43,7 @@ frontend www-https
         http-request set-header X-Forwarded-Proto https
         default_backend webservers
 
-backend apache_webservers
+backend webservers
     balance roundrobin
     server 160306-web-01 54.208.227.111:80 check
     server 160306-web-02 34.201.174.167:80 check
