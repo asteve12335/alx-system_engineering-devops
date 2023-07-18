@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Get the argument from the command line
 # Run the whoami command as the specified user
-sudo -u "$1" whoami
+su -u "$1" whoami
