@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# Get the argument from the command line and Run the whoami command as the specified user
+# Get the argument from the command line and run the whoami command as the specified user
 sudo -u "$1" whoami
