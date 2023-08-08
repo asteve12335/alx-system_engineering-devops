@@ -10,7 +10,7 @@ def top_ten(subreddit):
     posts listed for a given subreddit"""
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {'User-Agent': 'Mozilla/115.0.5790.171\
+    headers = {'User-Agent': 'Chrome/115.0.5790.171\
             (Windows NT 10.0; Win64; x64)'}
     params = {'limit': 10}
     response = requests.get(url, headers=headers, params=params)
